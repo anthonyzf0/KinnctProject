@@ -1,0 +1,74 @@
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\PondGame2.exe
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\PondGame2.pdb
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.dll
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.xml
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\obj\x86\Debug\PondGame2.csprojResolveAssemblyReference.cache
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\obj\x86\Debug\PondGame2.exe
+c:\users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\obj\x86\Debug\PondGame2.pdb
+C:\Users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\Content\Font.xnb
+C:\Users\antho\onedrive\documents\visual studio 2015\Projects\PondGame2\PondGame2\bin\Windows\x86\Debug\encog-core-cs.dll
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\obj\x86\Debug\PondGame2.exe
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\obj\x86\Debug\PondGame2.pdb
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\Content\Font.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\PondGame2.exe
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\PondGame2.pdb
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\antho\OneDrive\Documents\GitHub\PondGame2\PondGame2\obj\x86\Debug\PondGame2.csprojResolveAssemblyReference.cache
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\Content\Font.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\PondGame2.exe
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\PondGame2.pdb
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\obj\x86\Debug\PondGame2.csprojResolveAssemblyReference.cache
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\obj\x86\Debug\PondGame2.csproj.CoreCompileInputs.cache
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\obj\x86\Debug\PondGame2.exe
+C:\Users\antho\OneDrive\Documents\GitHub\Kinect Test\PondGame2\obj\x86\Debug\PondGame2.pdb
