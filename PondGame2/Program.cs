@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PondGame2
+namespace KinectProject
 {
 #if WINDOWS || LINUX
     /// <summary>
