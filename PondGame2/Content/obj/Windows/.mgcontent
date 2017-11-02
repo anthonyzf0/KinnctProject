@@ -4,6 +4,11 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/eahscs/Desktop/Anthony Stuff/KinnctProject/PondGame2/Content/Font.spritefont</File>
+    <File>C:/Users/antho/OneDrive/Documents/GitHub/KinnctProject/PondGame2/Content/Font.spritefont</File>
+    <File>C:/Users/antho/OneDrive/Documents/GitHub/KinnctProject/PondGame2/Content/Bodies/test/Arm1.gif</File>
+    <File>C:/Users/antho/OneDrive/Documents/GitHub/KinnctProject/PondGame2/Content/Bodies/test/Arm2.gif</File>
+    <File>C:/Users/antho/OneDrive/Documents/GitHub/KinnctProject/PondGame2/Content/Bodies/test/Body.png</File>
+    <File>C:/Users/antho/OneDrive/Documents/GitHub/KinnctProject/PondGame2/Content/Bodies/test/Hand.png</File>
+    <File>C:/Users/antho/OneDrive/Documents/GitHub/KinnctProject/PondGame2/Content/Bodies/test/Head.png</File>
   </SourceFiles>
 </SourceFileCollection>

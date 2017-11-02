@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
@@ -15,17 +13,25 @@ using Microsoft.Xna.Framework;
 using System.Collections.ObjectModel;
 using KinectProject.Source.Graphics;
 
+/*
+ * Gets input from the kinect
+ */
+
 namespace KinectProject.Source.Kinect
 {
     class KinectHandler
     {
 
+        //Sensor itself
         private KinectSensor kinectSensor = null;
+
         private BodyFrameReader bodyFrameReader = null;
         private CoordinateMapper coordinateMapper = null;
+
         private List<Tuple<JointType, JointType>> bones;
+        public Body[] bodies = null;
+
         private const float InferredZPositionClamp = 0.1f;
-        private Body[] bodies = null;
 
         private Point hand;
 
@@ -78,26 +84,21 @@ namespace KinectProject.Source.Kinect
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
+        //Called for every frame rendered
         private void Reader_FrameArrived(object sender, BodyFrameArrivedEventArgs e)
         {
             bool dataReceived = false;
 
             using (BodyFrame bodyFrame = e.FrameReference.AcquireFrame())
-            {
                 if (bodyFrame != null)
                 {
                     if (this.bodies == null)
-                    {
                         this.bodies = new Body[bodyFrame.BodyCount];
-                    }
-
-                    // The first time GetAndRefreshBodyData is called, Kinect will allocate each Body in the array.
-                    // As long as those body objects are not disposed and not set to null in the array,
-                    // those body objects will be re-used.
+                    
                     bodyFrame.GetAndRefreshBodyData(this.bodies);
                     dataReceived = true;
                 }
-            }
+            
             if (dataReceived)
             {
                 foreach (Body body in this.bodies)
@@ -122,19 +123,11 @@ namespace KinectProject.Source.Kinect
 
                             DepthSpacePoint depthSpacePoint = this.coordinateMapper.MapCameraPointToDepthSpace(position);
                             jointPoints[jointType] = new Point((int)depthSpacePoint.X, (int)depthSpacePoint.Y);
-
-                            if (jointType == JointType.HandLeft)
-                            {
-                                hand = jointPoints[JointType.HandLeft];
-                            }
+                            
                         }
                     }
                 }
             }
-        }
-        public void draw(Render render)
-        {
-            render.draw(hand.X, hand.Y, 40, 40, Color.Red);
         }
     }
 }

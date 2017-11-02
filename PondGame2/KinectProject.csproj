@@ -45,7 +45,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\GameController.cs" />
+    <Compile Include="Source\Graphics\BodyMapper.cs" />
     <Compile Include="Source\Graphics\Render.cs" />
+    <Compile Include="Source\Graphics\SpriteLoader.cs" />
     <Compile Include="Source\Kinect\KinectHandler.cs" />
   </ItemGroup>
   <ItemGroup>

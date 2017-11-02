@@ -49,3 +49,35 @@ C:\Users\eahscs\Desktop\Anthony Stuff\KinnctProject\PondGame2\obj\x86\Debug\Kine
 C:\Users\eahscs\Desktop\Anthony Stuff\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.pdb
 C:\Users\eahscs\Desktop\Anthony Stuff\KinnctProject\PondGame2\bin\Windows\x86\Debug\Microsoft.Kinect.dll
 C:\Users\eahscs\Desktop\Anthony Stuff\KinnctProject\PondGame2\bin\Windows\x86\Debug\Microsoft.Kinect.xml
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Font.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\KinectProject.exe
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\KinectProject.pdb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Microsoft.Kinect.dll
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Microsoft.Kinect.xml
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.csprojResolveAssemblyReference.cache
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.csproj.CoreCompileInputs.cache
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.exe
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.pdb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\test\Arm1.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\test\Arm2.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\test\Body.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\test\Hand.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\test\Head.xnb

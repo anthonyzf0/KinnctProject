@@ -1,6 +1,7 @@
 ﻿using Encog.Neural.Networks;
 using KinectProject.Source.Graphics;
 using KinectProject.Source.Kinect;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +12,28 @@ namespace KinectProject.Source
 {
     class GameController
     {
-        private KinectHandler kinect;
+        //Handles body drawing / maping
+        private BodyMapper body = new BodyMapper();
+
+        //Updates kinect sensor
+        //private KinectHandler kinect = new KinectHandler();
 
         public GameController()
         {
-            kinect = new KinectHandler();
         }
         
         public void update()
         {
+            //Updates the body drawing with where the bodies currently are
+            //body.update(kinect.bodies);
+
         }
 
         public void draw(Render render)
         {
-            kinect.draw(render);
+            //Draws the bodies
+            body.draw(render);
+
         }
 
     }
