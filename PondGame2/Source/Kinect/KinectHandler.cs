@@ -34,6 +34,7 @@ namespace KinectProject.Source.Kinect
         private const float InferredZPositionClamp = 0.1f;
 
         private Point hand;
+        public Dictionary<JointType, Point> jointPoints;
 
         public KinectHandler()
         {
@@ -101,14 +102,17 @@ namespace KinectProject.Source.Kinect
             
             if (dataReceived)
             {
+                bool first = true;
                 foreach (Body body in this.bodies)
                 {
+                    if (!first) continue;
                     if (body.IsTracked)
                     {
+                        first = false;
                         IReadOnlyDictionary<JointType, Joint> joints = body.Joints;
 
                         // convert the joint points to depth (display) space
-                        Dictionary<JointType, Point> jointPoints = new Dictionary<JointType, Point>();
+                        jointPoints = new Dictionary<JointType, Point>();
 
                         foreach (JointType jointType in joints.Keys)
                         {
@@ -123,8 +127,9 @@ namespace KinectProject.Source.Kinect
 
                             DepthSpacePoint depthSpacePoint = this.coordinateMapper.MapCameraPointToDepthSpace(position);
                             jointPoints[jointType] = new Point((int)depthSpacePoint.X, (int)depthSpacePoint.Y);
-                            
+
                         }
+                        
                     }
                 }
             }
