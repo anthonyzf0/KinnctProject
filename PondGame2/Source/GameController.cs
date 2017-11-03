@@ -16,7 +16,7 @@ namespace KinectProject.Source
         private BodyMapper body = new BodyMapper();
 
         //Updates kinect sensor
-        private KinectHandler kinect = new KinectHandler();
+        //private KinectHandler kinect = new KinectHandler();
 
         public GameController()
         {
@@ -25,14 +25,14 @@ namespace KinectProject.Source
         public void update()
         {
             //Updates the body drawing with where the bodies currently are
-            body.update(kinect.jointPoints);
+            //body.update(kinect.jointPoints);
 
         }
 
         public void draw(Render render)
         {
             //Draws the bodies
-            body.draw(render);
+            body.renderDebug(render);
 
         }
 

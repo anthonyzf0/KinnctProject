@@ -53,12 +53,15 @@ namespace KinectProject.Source.Graphics
         }
 
 
-        public void drawBodyPart(Vector2 a, Vector2 b, String body, SpriteLoader.Part bodyPart)
+        public void drawBodyPart(Vector2 a, Vector2 b, String body, SpriteLoader.Part bodyPart, bool rotate, bool points = false)
         {
 
             //rotation between points
             double rotation = Math.Atan(((double)(b.Y - a.Y)) / ((double)(b.X - a.X)));
             if (b.X < a.X) rotation += Math.PI;
+
+            if (rotate)
+                rotation -= Math.PI / 2;
 
             Texture2D text = sprites.getTexture(body, bodyPart);
 
@@ -67,7 +70,15 @@ namespace KinectProject.Source.Graphics
 
             float distance = Vector2.Distance(a, b);
 
-            spriteBatch.Draw(text, a, null, Color.White, (float)rotation, new Vector2(0, y / 2), distance / x, SpriteEffects.None, 0);
+            Vector2 rot = new Vector2((rotate) ? x / 2 : 0, (rotate) ? 0 : y / 2);
+            
+            spriteBatch.Draw(text, a, null, Color.White, (float)rotation, rot, distance / x, SpriteEffects.None, 0);
+           
+            if (points)
+            {
+                drawBox(a, Color.White);
+                drawBox(b, Color.White);
+            }
         }
     }
 
