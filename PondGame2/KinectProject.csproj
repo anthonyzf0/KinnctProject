@@ -49,6 +49,10 @@
     <Compile Include="Source\Graphics\Render.cs" />
     <Compile Include="Source\Graphics\SpriteLoader.cs" />
     <Compile Include="Source\Kinect\KinectHandler.cs" />
+    <Compile Include="Source\Menu\Button.cs" />
+    <Compile Include="Source\Menu\SideBar.cs" />
+    <Compile Include="Source\Menu\Tab.cs" />
+    <Compile Include="Source\Menu\Tabs\Background.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="encog-core-cs">

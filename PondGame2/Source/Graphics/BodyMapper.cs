@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace KinectProject.Source.Graphics
 {
     class BodyMapper
-    {
+    { 
         private Dictionary<JointType, Point> jointPoints;
 
         public BodyMapper()

@@ -30,10 +30,13 @@ namespace KinectProject
             spriteBatch = new SpriteBatch(GraphicsDevice);
             render = new Render(spriteBatch, graphics.GraphicsDevice, Content);
             
-            graphics.PreferredBackBufferWidth = 600;  // set this value to the desired width of your window
-            graphics.PreferredBackBufferHeight = 600;   // set this value to the desired height of your window
-            graphics.ApplyChanges();
+            graphics.PreferredBackBufferWidth = 1400;  // set this value to the desired width of your window
+            graphics.PreferredBackBufferHeight = 800;   // set this value to the desired height of your window
 
+            IsMouseVisible = true;
+
+            graphics.ApplyChanges();
+            
             game = new GameController();
 
             base.Initialize();

@@ -80,6 +80,13 @@ namespace KinectProject.Source.Graphics
                 drawBox(b, Color.White);
             }
         }
+
+        public void drawBackground(Rectangle rect, String name)
+        {
+            Texture2D text = sprites.getBackground(name);
+            spriteBatch.Draw(text, rect, Color.White);
+
+        }
     }
 
 }

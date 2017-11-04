@@ -112,3 +112,7 @@ C:\Users\eahscs\Documents\GitHub\KinnctProject\PondGame2\obj\x86\Debug\KinectPro
 C:\Users\eahscs\Documents\GitHub\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.csproj.CoreCompileInputs.cache
 C:\Users\eahscs\Documents\GitHub\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.exe
 C:\Users\eahscs\Documents\GitHub\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.pdb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Backgrounds\castle.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Backgrounds\green.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Backgrounds\haunt.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Backgrounds\woah.xnb

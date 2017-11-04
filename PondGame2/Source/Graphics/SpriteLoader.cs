@@ -16,12 +16,27 @@ namespace KinectProject.Source.Graphics
         
         };
 
+        private Dictionary<String, Texture2D> backgrounds;
         private Dictionary<String, Texture2D[]> bodySprites;
+
+        public static String[] backgroundNames = { "castle", "haunt", "woah", "green" };
 
         public SpriteLoader(ContentManager content)
         {
+            //Bodies
             bodySprites = new Dictionary<string, Texture2D[]>();
             loadSpriteFile("test",content);
+
+            //Backgrounds
+            backgrounds = new Dictionary<string, Texture2D>();
+
+            foreach(String back in backgroundNames)
+                loadBackground(back, content);
+        }
+
+        public void loadBackground(String path, ContentManager content)
+        {
+            backgrounds.Add(path, content.Load<Texture2D>("Backgrounds//" + path));
         }
 
         public void loadSpriteFile(String path, ContentManager content)
@@ -41,6 +56,11 @@ namespace KinectProject.Source.Graphics
 
             return bodySprites[body][(int)part];
         
+        }
+
+        public Texture2D getBackground (String back)
+        {
+            return backgrounds[back];
         }
         
     }
