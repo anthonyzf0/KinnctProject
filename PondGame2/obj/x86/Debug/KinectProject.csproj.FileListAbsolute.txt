@@ -116,3 +116,4 @@ C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86
 C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Backgrounds\green.xnb
 C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Backgrounds\haunt.xnb
 C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Backgrounds\woah.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\test\Thumbnail.xnb

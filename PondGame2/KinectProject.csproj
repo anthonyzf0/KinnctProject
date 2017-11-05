@@ -53,6 +53,7 @@
     <Compile Include="Source\Menu\SideBar.cs" />
     <Compile Include="Source\Menu\Tab.cs" />
     <Compile Include="Source\Menu\Tabs\Background.cs" />
+    <Compile Include="Source\Menu\Tabs\Character.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="encog-core-cs">

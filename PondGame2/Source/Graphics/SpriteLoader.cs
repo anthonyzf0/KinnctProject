@@ -20,18 +20,22 @@ namespace KinectProject.Source.Graphics
         private Dictionary<String, Texture2D[]> bodySprites;
 
         public static String[] backgroundNames = { "castle", "haunt", "woah", "green" };
+        public static String[] characterNames = { "test" };
 
         public SpriteLoader(ContentManager content)
         {
             //Bodies
             bodySprites = new Dictionary<string, Texture2D[]>();
-            loadSpriteFile("test",content);
-
             //Backgrounds
             backgrounds = new Dictionary<string, Texture2D>();
 
+            //load Bodies
+            foreach (String character in characterNames)
+                loadSpriteFile(character,content);
+
+            //Load Backgrounds
             foreach(String back in backgroundNames)
-                loadBackground(back, content);
+                loadBackground( back, content);
         }
 
         public void loadBackground(String path, ContentManager content)
@@ -47,6 +51,9 @@ namespace KinectProject.Source.Graphics
             textures[2] = content.Load<Texture2D>("Bodies//" + path + "//Hand");
             textures[3] = content.Load<Texture2D>("Bodies//" + path + "//Body");
             textures[4] = content.Load<Texture2D>("Bodies//" + path + "//Head");
+
+            //Loads thumbnail imag
+            backgrounds.Add(path, content.Load<Texture2D>("Bodies//" + path + "//Thumbnail"));
 
             bodySprites.Add(path, textures);
         }

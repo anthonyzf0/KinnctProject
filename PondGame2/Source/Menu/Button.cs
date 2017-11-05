@@ -15,7 +15,7 @@ namespace KinectProject.Source.Menu
         public Rectangle pos;
         public bool down = false;
 
-        public Button(int x, int y, int w, int h, String img)
+        public Button(int x, int y, int w, int h, String img = "")
         {
             this.img = img;
             pos = new Rectangle(x, y, w, h);
@@ -34,6 +34,8 @@ namespace KinectProject.Source.Menu
 
         public void draw(Render render)
         {
+            if (img == "") return;
+
             render.drawBackground(pos, img);
             render.show(pos.X + 50, pos.Y - 15, img);
         }
