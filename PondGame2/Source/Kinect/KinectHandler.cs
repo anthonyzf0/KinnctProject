@@ -36,8 +36,10 @@ namespace KinectProject.Source.Kinect
         private Point hand;
         public Dictionary<JointType, Point> jointPoints;
 
-        public KinectHandler()
+        public KinectHandler(bool debug = false)
         {
+            if (debug) return;
+
             this.kinectSensor = KinectSensor.GetDefault();
             this.coordinateMapper = this.kinectSensor.CoordinateMapper;
             this.bodyFrameReader = this.kinectSensor.BodyFrameSource.OpenReader();

@@ -44,16 +44,13 @@
     <Compile Include="MainGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\BodyHandler\BodyLoader.cs" />
+    <Compile Include="Source\BodyHandler\CharacterPart.cs" />
+    <Compile Include="Source\BodyHandler\KinectData.cs" />
     <Compile Include="Source\GameController.cs" />
-    <Compile Include="Source\Graphics\BodyMapper.cs" />
     <Compile Include="Source\Graphics\Render.cs" />
     <Compile Include="Source\Graphics\SpriteLoader.cs" />
     <Compile Include="Source\Kinect\KinectHandler.cs" />
-    <Compile Include="Source\Menu\Button.cs" />
-    <Compile Include="Source\Menu\SideBar.cs" />
-    <Compile Include="Source\Menu\Tab.cs" />
-    <Compile Include="Source\Menu\Tabs\Background.cs" />
-    <Compile Include="Source\Menu\Tabs\Character.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="encog-core-cs">

@@ -1,8 +1,9 @@
 ﻿using Encog.Neural.Networks;
+using KinectProject.Source.BodyHandler;
 using KinectProject.Source.Graphics;
 using KinectProject.Source.Kinect;
-using KinectProject.Source.Menu;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
@@ -14,43 +15,31 @@ namespace KinectProject.Source
 {
     class GameController
     {
-        //Handles body drawing / maping
-        private BodyMapper body = new BodyMapper();
-
-        //SideBar
-        private SideBar sidebar = new SideBar();
-
-        //Background
-        public static string sceneUsed = "woah";
-        private Rectangle scene = new Rectangle(0, 0, 1000, 800);
-
-        //Updates kinect sensor
-        //private KinectHandler kinect = new KinectHandler();
+        private KinectHandler kinect;
+        private KinectData data;
+        
+        //Loads a body
+        private CharacterPart body = BodyLoader.loadBody("test");
 
         public GameController()
         {
-
+            //kinect = new KinectHandler();
+            data = new KinectData();
+            
         }
         
         public void update()
         {
+            //Updates angle data with the kinect object
+            //data.readData(kinect);
+
             //Updates the body drawing with where the bodies currently are
-            //body.update(kinect.jointPoints);
-
-            sidebar.update();
-
+            
         }
 
         public void draw(Render render)
         {
-            //Draws scene
-            render.drawBackground(scene, sceneUsed);
-
-            //Draws the bodies
-            body.renderDebug(render);
-
-            //Sidebar
-            sidebar.render(render);
+            body.draw(render, new Vector2(500,500), 1, data);
 
         }
 

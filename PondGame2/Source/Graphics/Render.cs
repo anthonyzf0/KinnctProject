@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 
 namespace KinectProject.Source.Graphics
@@ -11,8 +12,8 @@ namespace KinectProject.Source.Graphics
         SpriteBatch spriteBatch;
         SpriteFont font;
 
-        //Loaded Textures
-        private SpriteLoader sprites;
+        //Render vectors
+        private Vector2 horizontal = new Vector2(1, 0);
 
         public Render(SpriteBatch graphics, GraphicsDevice g, Microsoft.Xna.Framework.Content.ContentManager content)
         {
@@ -22,8 +23,7 @@ namespace KinectProject.Source.Graphics
             spriteBatch = graphics;
             font = content.Load<SpriteFont>("font");
 
-            sprites = new SpriteLoader(content);
-
+            SpriteLoader.content = content;
         }
         
         //Sets up render
@@ -35,7 +35,7 @@ namespace KinectProject.Source.Graphics
         {
             spriteBatch.End();
         }
-
+        
         //render stuff
         public void draw(int x, int y, int w, int h, Color c)
         {
@@ -44,49 +44,20 @@ namespace KinectProject.Source.Graphics
 
         public void drawBox(Vector2 v, Color c)
         {
-            draw((int)v.X - 10, (int)v.Y - 10, 20, 20,c);
+            draw((int)v.X - 3, (int)v.Y - 3, 6, 6,c);
         }
 
         public void show(int x, int y, String text)
         {
             spriteBatch.DrawString(font, text, new Vector2(x, y), Color.White);
         }
-
-
-        public void drawBodyPart(Vector2 a, Vector2 b, String body, SpriteLoader.Part bodyPart, bool rotate, bool points = false)
+        
+        public void drawPart(float angle, float distance, Texture2D texture, Vector2 pos)
         {
-
-            //rotation between points
-            double rotation = Math.Atan(((double)(b.Y - a.Y)) / ((double)(b.X - a.X)));
-            if (b.X < a.X) rotation += Math.PI;
-
-            if (rotate)
-                rotation -= Math.PI / 2;
-
-            Texture2D text = sprites.getTexture(body, bodyPart);
-
-            int x = text.Width;
-            int y = text.Height;
-
-            float distance = Vector2.Distance(a, b);
-
-            Vector2 rot = new Vector2((rotate) ? x / 2 : 0, (rotate) ? 0 : y / 2);
-            
-            spriteBatch.Draw(text, a, null, Color.White, (float)rotation, rot, distance / x, SpriteEffects.None, 0);
-           
-            if (points)
-            {
-                drawBox(a, Color.White);
-                drawBox(b, Color.White);
-            }
+            double yVal = texture.Height/3;
+            spriteBatch.Draw(texture, new Rectangle((int)pos.X, (int)(pos.Y), (int)distance, (int)yVal), null, Color.White, (float)angle, new Vector2(0,texture.Height/2), SpriteEffects.None, 0);
         }
 
-        public void drawBackground(Rectangle rect, String name)
-        {
-            Texture2D text = sprites.getBackground(name);
-            spriteBatch.Draw(text, rect, Color.White);
-
-        }
     }
 
 }
