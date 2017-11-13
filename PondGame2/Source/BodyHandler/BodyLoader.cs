@@ -18,12 +18,17 @@ namespace KinectProject.Source.BodyHandler
             switch (name)
             {
                 case "test":
+                    
+                    body = new CharacterPart(0, 0, CharacterPart.BodyAngle.zero, "base", null);
+                    //Left arm
+                    body.addPart("base", new CharacterPart(100, 0, CharacterPart.BodyAngle.leftUpperArm, "upLeft", textures["Arm1"]));
+                    body.addPart("upLeft", new CharacterPart(100, 0, CharacterPart.BodyAngle.leftLowwerArm, "lowLeft", textures["Arm1"]));
+                    body.addPart("handLeft", new CharacterPart(100, 0, CharacterPart.BodyAngle.leftLowwerArm, "lowLeft", textures["Arm1"]));
 
-                    body = new CharacterPart(100, 0, CharacterPart.BodyAngle.HeadToSholder, "test0", textures["Arm1"]);
-
-                    for(int i=0;i<6;i++)
-                        body.addPart("test"+i, new CharacterPart(100, 0, CharacterPart.BodyAngle.HeadToSholder, "test"+(i+1), textures["Arm1"]));
-
+                    //Right arm
+                    body.addPart("base", new CharacterPart(100, 0, CharacterPart.BodyAngle.rightUpperArm, "upRight", textures["Arm1"]));
+                    body.addPart("upRight", new CharacterPart(100, 0, CharacterPart.BodyAngle.rightLowwerArm, "lowRight", textures["Arm1"]));
+                    
                     break;
                     
             }

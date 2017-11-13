@@ -23,7 +23,7 @@ namespace KinectProject.Source
 
         public GameController()
         {
-            //kinect = new KinectHandler();
+            kinect = new KinectHandler();
             data = new KinectData();
             
         }
@@ -31,15 +31,13 @@ namespace KinectProject.Source
         public void update()
         {
             //Updates angle data with the kinect object
-            //data.readData(kinect);
-
-            //Updates the body drawing with where the bodies currently are
+            data.readData(kinect);
             
         }
 
         public void draw(Render render)
         {
-            body.draw(render, new Vector2(500,500), 1, data);
+            body.draw(render, new Vector2(300,300), 1, data);
 
         }
 

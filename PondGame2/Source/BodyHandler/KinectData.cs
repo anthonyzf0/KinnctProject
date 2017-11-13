@@ -18,17 +18,43 @@ namespace KinectProject.Source.BodyHandler
         }
         public void readData(Kinect.KinectHandler kinect)
         {
+            if (kinect.jointPoints == null) return;
 
             //Clear last data
             angles = new Dictionary<BodyAngle, float>();
 
-            //Head to sholder
-            angles.Add(BodyAngle.HeadToSholder, 
+            angles.Add(BodyAngle.zero, 0);
+
+            //Arms
+            angles.Add(BodyAngle.leftUpperArm,
                 getAngle(
-                    kinect.jointPoints[Microsoft.Kinect.JointType.Head], 
-                    kinect.jointPoints[Microsoft.Kinect.JointType.Neck]
+                    kinect.jointPoints[Microsoft.Kinect.JointType.ShoulderLeft],
+                    kinect.jointPoints[Microsoft.Kinect.JointType.ElbowLeft]
                     )
+
             );
+            angles.Add(BodyAngle.leftLowwerArm,
+                getAngle(
+                    kinect.jointPoints[Microsoft.Kinect.JointType.HandLeft],
+                    kinect.jointPoints[Microsoft.Kinect.JointType.ElbowLeft]
+                    )
+
+            );
+            angles.Add(BodyAngle.rightUpperArm,
+                getAngle(
+                    kinect.jointPoints[Microsoft.Kinect.JointType.ElbowRight],
+                    kinect.jointPoints[Microsoft.Kinect.JointType.ShoulderRight]
+                    ) + (float)Math.PI / 2
+
+            );
+            angles.Add(BodyAngle.rightLowwerArm,
+                getAngle(
+                    kinect.jointPoints[Microsoft.Kinect.JointType.HandRight],
+                    kinect.jointPoints[Microsoft.Kinect.JointType.ElbowRight]
+                    ) + (float)Math.PI
+
+            );
+
 
         }
 

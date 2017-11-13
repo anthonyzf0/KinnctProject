@@ -54,6 +54,8 @@ namespace KinectProject.Source.Graphics
         
         public void drawPart(float angle, float distance, Texture2D texture, Vector2 pos)
         {
+            if (texture == null) return;
+
             double yVal = texture.Height/3;
             spriteBatch.Draw(texture, new Rectangle((int)pos.X, (int)(pos.Y), (int)distance, (int)yVal), null, Color.White, (float)angle, new Vector2(0,texture.Height/2), SpriteEffects.None, 0);
         }

@@ -13,7 +13,8 @@ namespace KinectProject.Source.BodyHandler
     {
         public enum BodyAngle
         {
-            HeadToSholder
+            zero,
+            leftUpperArm, leftLowwerArm, rightUpperArm, rightLowwerArm
 
         }
 
