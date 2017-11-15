@@ -30,14 +30,14 @@ namespace KinectProject.Source.BodyHandler
                 getAngle(
                     kinect.jointPoints[Microsoft.Kinect.JointType.ShoulderLeft],
                     kinect.jointPoints[Microsoft.Kinect.JointType.ElbowLeft]
-                    )
+                    ) + (float)Math.PI
 
             );
             angles.Add(BodyAngle.leftLowwerArm,
                 getAngle(
                     kinect.jointPoints[Microsoft.Kinect.JointType.HandLeft],
                     kinect.jointPoints[Microsoft.Kinect.JointType.ElbowLeft]
-                    )
+                    ) 
 
             );
             angles.Add(BodyAngle.rightUpperArm,
@@ -53,6 +53,18 @@ namespace KinectProject.Source.BodyHandler
                     kinect.jointPoints[Microsoft.Kinect.JointType.ElbowRight]
                     ) + (float)Math.PI
 
+            );
+            angles.Add(BodyAngle.head,
+                getAngle(
+                    kinect.jointPoints[Microsoft.Kinect.JointType.Head],
+                    kinect.jointPoints[Microsoft.Kinect.JointType.Neck]
+                    )
+            );
+            angles.Add(BodyAngle.body,
+                getAngle(
+                    kinect.jointPoints[Microsoft.Kinect.JointType.SpineShoulder],
+                    kinect.jointPoints[Microsoft.Kinect.JointType.SpineBase]
+                    ) + (float)Math.PI / 2
             );
 
 
