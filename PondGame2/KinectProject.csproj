@@ -47,6 +47,7 @@
     <Compile Include="Source\BodyHandler\BodyLoader.cs" />
     <Compile Include="Source\BodyHandler\CharacterPart.cs" />
     <Compile Include="Source\BodyHandler\KinectData.cs" />
+    <Compile Include="Source\BodyHandler\Recorder.cs" />
     <Compile Include="Source\GameController.cs" />
     <Compile Include="Source\Graphics\Render.cs" />
     <Compile Include="Source\Graphics\SpriteLoader.cs" />

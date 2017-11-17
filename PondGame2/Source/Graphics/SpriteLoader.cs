@@ -27,6 +27,36 @@ namespace KinectProject.Source.Graphics
             
             return textures;
         }
-        
+
+        public static List<Texture2D> loadBackgrounds()
+        {
+            String[] files = Directory.GetFiles(content.RootDirectory + "//Backgrounds");
+
+            List<Texture2D> imgs = new List<Texture2D>();
+
+            foreach (String file in files)
+            {
+                String name = file.Substring(9, file.Length-13).Replace("\\", "//");
+                imgs.Add(content.Load<Texture2D>(name));
+            }
+
+            return imgs;
+        }
+
+        public static List<String> characterNames()
+        {
+            String[] files = Directory.GetDirectories(content.RootDirectory + "//Bodies//");
+
+            List<String> dirs = new List<String>();
+
+            foreach (String file in files)
+            {
+                String name = file.Substring(17, file.Length - 17).Replace("\\", "//");
+                dirs.Add(name);
+            }
+
+            return dirs;
+        }
     }
+        
 }

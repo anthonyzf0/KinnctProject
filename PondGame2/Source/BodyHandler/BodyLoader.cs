@@ -14,29 +14,19 @@ namespace KinectProject.Source.BodyHandler
         public static CharacterPart loadBody(String name)
         {
             Dictionary<String, Texture2D> textures = Graphics.SpriteLoader.loadSpriteFile(name);
-            CharacterPart body = null;
+            CharacterPart body = new CharacterPart();
 
             switch (name)
             {
-                case "test2":
-
-                    body = new CharacterPart(0, 0, Vector2.Zero, CharacterPart.BodyAngle.zero, "base", null);
-                    //Left arm
-                    body.addPart("base", new CharacterPart(100, 0, Vector2.Zero, CharacterPart.BodyAngle.leftUpperArm, "upLeft", textures["Arm1"]));
-                    body.addPart("upLeft", new CharacterPart(100, 0, Vector2.Zero, CharacterPart.BodyAngle.leftLowwerArm, "lowLeft", textures["Arm1"]));
-
-                    //Right arm
-                    body.addPart("base", new CharacterPart(100, 0, Vector2.Zero, CharacterPart.BodyAngle.rightUpperArm, "upRight", textures["Arm1"]));
-                    body.addPart("upRight", new CharacterPart(100, 0, Vector2.Zero, CharacterPart.BodyAngle.rightLowwerArm, "lowRight", textures["Arm1"]));
-
-                    break;
-
                 case "test":
 
-                    body = new CharacterPart(0, 0, Vector2.Zero, CharacterPart.BodyAngle.zero, "base", null);
-                    //Left arm
-                    body.addPart("base", new CharacterPart(-5 * (float)Math.PI / 4, CharacterPart.BodyAngle.body, "body", textures["Body"]));
-                    body.addPart("body", new CharacterPart(100, 0, new Vector2(-50, -50), CharacterPart.BodyAngle.leftUpperArm, "leftUpperArm", textures["Arm1"]));
+                    body.addPart("base", new CharacterPart("body", CharacterPart.BodyAngle.body, textures["Body"], 100, 100));
+
+                    //Arms
+                    body.addPart("body", new CharacterPart("leftArm", CharacterPart.BodyAngle.leftUpperArm, -100, -80, textures["Arm1"], 100));
+                    body.addPart("leftArm", new CharacterPart("leftArm2", CharacterPart.BodyAngle.leftUpperArm, 0, 1, textures["Arm1"], 100));
+                    body.addPart("body", new CharacterPart("rightArm", CharacterPart.BodyAngle.leftUpperArm, 100, -80, textures["Arm1"], 100));
+                    body.addPart("rightArm", new CharacterPart("rightArm2", CharacterPart.BodyAngle.leftUpperArm, 0, 1, textures["Arm1"], 100));
 
                     break;
 

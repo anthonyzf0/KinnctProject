@@ -4,6 +4,7 @@ using KinectProject.Source.Graphics;
 using KinectProject.Source.Kinect;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,15 @@ namespace KinectProject.Source
         //Loads a body
         private CharacterPart body = BodyLoader.loadBody("test");
 
+        //Backgrounds and other bodies
+        private int backgroundId, bodyId;
+        private bool lastPress = false;
+        private List<Texture2D> background = SpriteLoader.loadBackgrounds();
+        private List<String> bodyNames = SpriteLoader.characterNames();
+
         public GameController()
         {
-            kinect = new KinectHandler();
+            //kinect = new KinectHandler();
             data = new KinectData();
             
         }
@@ -31,12 +38,35 @@ namespace KinectProject.Source
         public void update()
         {
             //Updates angle data with the kinect object
-            data.readData(kinect);
-            
+            //data.readData(kinect);
+
+            //Zeros all data so that your position is not the base position
+            if (Keyboard.GetState().IsKeyDown(Keys.Q)) data.zero();
+
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            {
+                if (!lastPress)
+                {
+                    bodyId = (bodyId == bodyNames.Count - 1) ? 0 : bodyId + 1;
+                    body = BodyLoader.loadBody(bodyNames[bodyId]);
+                }
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.E)) {
+                if (!lastPress)
+                {
+                    lastPress = true;
+                    backgroundId = (backgroundId == background.Count - 1) ? 0 : backgroundId + 1;
+                }
+            }
+            else
+                lastPress = false;
+
+
         }
 
         public void draw(Render render)
         {
+            render.drawImg(background[backgroundId], 800, 600);
             body.draw(render, new Vector2(300,300), 1, data);
 
         }

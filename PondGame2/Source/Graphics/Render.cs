@@ -60,15 +60,20 @@ namespace KinectProject.Source.Graphics
             spriteBatch.Draw(texture, new Rectangle((int)pos.X, (int)(pos.Y), (int)distance, (int)yVal), null, Color.White, (float)angle, new Vector2(0,texture.Height/2), SpriteEffects.None, 0);
         }
 
-        public void drawPartCenter(Texture2D texture, Vector2 pos, float rotation)
+        public void drawPartCenter(Texture2D texture, Vector2 pos, float rotation, int width, int height)
         {
             if (texture == null) return;
 
-            int w = texture.Width/2;
-            int h = texture.Height/2;
+            spriteBatch.Draw(texture, new Rectangle((int)(pos.X), (int)(pos.Y), width * 2, height * 2),
+                null, Color.White, (float)rotation, new Vector2(texture.Width/2, texture.Height/2), SpriteEffects.None, 0
+                
+            );
 
-            spriteBatch.Draw(texture, new Rectangle((int)pos.X,(int)pos.Y,2*w,2*h), null, Color.White, (float)rotation, new Vector2(w,h), SpriteEffects.None, 0);
+        }
 
+        public void drawImg(Texture2D text, int width, int height)
+        {
+            spriteBatch.Draw(text, new Rectangle(0, 0, width, height), Color.White);
         }
 
     }

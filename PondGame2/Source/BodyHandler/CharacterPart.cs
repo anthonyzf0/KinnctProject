@@ -20,14 +20,20 @@ namespace KinectProject.Source.BodyHandler
 
         }
 
-        //Where it is
-        private float distance;
-        private Vector2 offset = Vector2.Zero;
-        public float angle;
+        //Used for debug
+        public float debugAngle = 0;
 
-        //Other info
-        private bool roateMid = false;
+        //Rotation offset
+        private float x = 0, y = 0;
+        private Vector2 offset;
+        private float offsetAngle = 0;
 
+        private int length;
+
+        private int sizeX, sizeY;
+        private bool mid = false;
+        private float distance = 0;
+        
         //What effects its angle
         private BodyAngle deltaAngle;
 
@@ -36,31 +42,49 @@ namespace KinectProject.Source.BodyHandler
         private Texture2D texture;
 
         public List<CharacterPart> attatchedParts = new List<CharacterPart>();
+
+        //Sets up base body
+        public CharacterPart()
+        {
+            partName = "base";
+
+            texture = null;
+            deltaAngle = BodyAngle.zero;
+        }
+
+        //Sets a part rotating about its center
+        public CharacterPart(String name, BodyAngle delta, Texture2D img, int width, int height)
+        {
+            partName = name;
+            deltaAngle = delta;
+
+            texture = img;
+
+            sizeX = width;
+            sizeY = height;
+            
+            mid = true;
+
+        }
+
+        //Sets a part rotating about a point x and y from last part center
+        public CharacterPart(String name, BodyAngle delta, float x, float y, Texture2D img, int length)
+        {
+            partName = name;
+            deltaAngle = delta;
+
+            texture = img;
+
+            //Position data
+            this.x = x;
+            this.y = y;
+            offset = new Vector2(x, y);
+            distance = offset.Length();
+            offsetAngle = getAngle(offset);
+
+            this.length = length;
+        }
         
-        public CharacterPart(float distance, float angle, Vector2 offset, BodyAngle delta, String partName, Texture2D texture)
-        {
-            this.distance = distance;
-            this.angle = angle;
-            this.offset = offset;
-            this.deltaAngle = delta;
-
-            this.partName = partName;
-            this.texture = texture;
-
-        }
-
-        public CharacterPart(float angle, BodyAngle delta, String name, Texture2D texture)
-        {
-            roateMid = true;
-            
-            this.angle = angle;
-            this.deltaAngle = delta;
-            this.partName = name;
-
-            this.texture = texture;
-            
-        }
-
         public void addPart(string basePart, CharacterPart newPart)
         {
             CharacterPart part = findPart(basePart);
@@ -84,48 +108,39 @@ namespace KinectProject.Source.BodyHandler
 
             return null;
         }
-
-        public float getAngle(Vector2 a, Vector2 b)
+        public float getAngle(Vector2 a)
         {
-            double angle = Math.Atan(((double)b.Y - a.Y) / ((double)b.X - a.X));
-            if (b.X < a.X)
-                angle += Math.PI;
+            double angle = Math.Atan((double)(a.Y/a.X));
+            if (a.X<0) angle += Math.PI;
 
             return (float)angle;
         }
 
         public void draw(Render render, Vector2 pos, float angle, KinectData data)
         {
+            render.drawBox(pos, Color.Orange);
             //Gets angles and pos
-            angle += this.angle + data.getAngle(deltaAngle);
-            
-            pos += offset;
+            angle += offsetAngle;
+            float nextAngle = angle + data.getAngle(deltaAngle) + debugAngle; 
 
             //Rotates and draws
-            if (roateMid)
-                render.drawPartCenter(texture, pos, angle);
+            if (mid)
+                render.drawPartCenter(texture, pos, nextAngle, sizeX, sizeY);
             else
-                render.drawPartDistance(angle, distance, texture, pos);
+            {
+                pos += new Vector2((float)(distance * Math.Cos(angle)),(float)(distance * Math.Sin(angle)));
+                render.drawPartDistance(nextAngle, length, texture, pos);
 
-            //draws points
-            render.drawBox(pos, Color.Gold);
+                pos += new Vector2((float)(length * Math.Cos(nextAngle)), (float)(length * Math.Sin(nextAngle)));
+            }
 
-            if (!roateMid)
-            pos += new Vector2(distance * (float)Math.Cos(angle), distance * (float)Math.Sin(angle));
-
-            render.drawBox(pos, Color.Gold);
+            render.drawBox(pos, Color.Purple);
             
+
             //Next points
             foreach (CharacterPart part in attatchedParts)
             {
-                if (roateMid) {
-                    double nextangle = (double)getAngle(Vector2.Zero, part.offset) + angle;
-                    float length = part.offset.Length();
-                    Vector2 nextPos = -part.offset + pos + new Vector2(length*(float)Math.Cos(nextangle), length*(float)(Math.Sin(nextangle)));
-                    part.draw(render, nextPos, angle, data);
-                }
-                else
-                    part.draw(render, pos, angle, data);
+                part.draw(render, pos, nextAngle, data);
             }
             
         }

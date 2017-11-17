@@ -10,7 +10,23 @@ namespace KinectProject.Source.BodyHandler
 {
     class KinectData
     {
-        private Dictionary<BodyAngle, float> angles;
+        public Dictionary<BodyAngle, float> angles;
+
+        private Dictionary<BodyAngle, float> baseAngles = new Dictionary<BodyAngle, float>() {
+
+            {BodyAngle.zero, 0 },
+            {BodyAngle.head, 0 },
+            {BodyAngle.body, 0 },
+            {BodyAngle.leftLowwerArm, 0 },
+            {BodyAngle.rightLowwerArm, 0 },
+            {BodyAngle.leftUpperArm, 0 },
+            {BodyAngle.rightUpperArm, 0 },
+            {BodyAngle.leftLowwerLeg, 0 },
+            {BodyAngle.leftUpperLeg, 0 },
+            {BodyAngle.rightLowwerLeg, 0 },
+            {BodyAngle.rightUpperLeg, 0 }
+        };
+
         
         public KinectData()
         {
@@ -25,12 +41,12 @@ namespace KinectProject.Source.BodyHandler
 
             angles.Add(BodyAngle.zero, 0);
 
-            //Arms
+            //Left arm
             angles.Add(BodyAngle.leftUpperArm,
                 getAngle(
                     kinect.jointPoints[Microsoft.Kinect.JointType.ShoulderLeft],
                     kinect.jointPoints[Microsoft.Kinect.JointType.ElbowLeft]
-                    ) + (float)Math.PI
+                    )
 
             );
             angles.Add(BodyAngle.leftLowwerArm,
@@ -40,20 +56,23 @@ namespace KinectProject.Source.BodyHandler
                     ) 
 
             );
+            //Right arm
             angles.Add(BodyAngle.rightUpperArm,
                 getAngle(
                     kinect.jointPoints[Microsoft.Kinect.JointType.ElbowRight],
                     kinect.jointPoints[Microsoft.Kinect.JointType.ShoulderRight]
-                    ) + (float)Math.PI / 2
+                    )
 
             );
             angles.Add(BodyAngle.rightLowwerArm,
                 getAngle(
                     kinect.jointPoints[Microsoft.Kinect.JointType.HandRight],
                     kinect.jointPoints[Microsoft.Kinect.JointType.ElbowRight]
-                    ) + (float)Math.PI
+                    )
 
             );
+
+            //Body / head
             angles.Add(BodyAngle.head,
                 getAngle(
                     kinect.jointPoints[Microsoft.Kinect.JointType.Head],
@@ -64,7 +83,38 @@ namespace KinectProject.Source.BodyHandler
                 getAngle(
                     kinect.jointPoints[Microsoft.Kinect.JointType.SpineShoulder],
                     kinect.jointPoints[Microsoft.Kinect.JointType.SpineBase]
-                    ) + (float)Math.PI / 2
+                    )
+            );
+
+            //Left leg
+            angles.Add(BodyAngle.leftUpperLeg,
+                getAngle(
+                    kinect.jointPoints[Microsoft.Kinect.JointType.HipLeft],
+                    kinect.jointPoints[Microsoft.Kinect.JointType.KneeLeft]
+                    )
+
+            );
+            angles.Add(BodyAngle.leftLowwerLeg,
+                getAngle(
+                    kinect.jointPoints[Microsoft.Kinect.JointType.KneeLeft],
+                    kinect.jointPoints[Microsoft.Kinect.JointType.FootLeft]
+                    )
+
+            );
+            //Right leg
+            angles.Add(BodyAngle.rightUpperLeg,
+                getAngle(
+                    kinect.jointPoints[Microsoft.Kinect.JointType.HipRight],
+                    kinect.jointPoints[Microsoft.Kinect.JointType.KneeRight]
+                    )
+
+            );
+            angles.Add(BodyAngle.rightLowwerLeg,
+                getAngle(
+                    kinect.jointPoints[Microsoft.Kinect.JointType.KneeRight],
+                    kinect.jointPoints[Microsoft.Kinect.JointType.FootLeft]
+                    )
+
             );
 
 
@@ -79,9 +129,21 @@ namespace KinectProject.Source.BodyHandler
             return (float)angle;
         }
 
+        public void zero()
+        {
+            foreach (BodyAngle key in angles.Keys)
+            {
+                baseAngles[key] = 0;
+                baseAngles[key] = -getAngle(key);
+            }
+
+        }
+
         public float getAngle(BodyAngle angle)
         {
-            return angles.ContainsKey(angle) ? angles[angle] : 0;
+            if (angles.ContainsKey(angle))
+                return angles[angle] + baseAngles[angle];
+            return 0;
         }
         
     }
