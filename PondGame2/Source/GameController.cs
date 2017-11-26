@@ -20,7 +20,7 @@ namespace KinectProject.Source
         private KinectData data;
         
         //Loads a body
-        private CharacterPart body = BodyLoader.loadBody("test");
+        private CharacterPart body = BodyLoader.loadBody("Knight");
 
         //Backgrounds and other bodies
         private int backgroundId, bodyId;
@@ -40,9 +40,17 @@ namespace KinectProject.Source
             //Updates angle data with the kinect object
             //data.readData(kinect);
 
-            //Zeros all data so that your position is not the base position
+            //Zeros all data so that your position is now the base position
             if (Keyboard.GetState().IsKeyDown(Keys.Q)) data.zero();
 
+            if (Keyboard.GetState().IsKeyDown(Keys.R)) body.findPart("body").debugAngle += 0.05f;
+            if (Keyboard.GetState().IsKeyDown(Keys.T)) body.findPart("RightArm").debugAngle += 0.05f;
+            if (Keyboard.GetState().IsKeyDown(Keys.Y)) body.findPart("Shield").debugAngle += 0.05f;
+            if (Keyboard.GetState().IsKeyDown(Keys.U)) body.findPart("LeftArm").debugAngle += 0.05f;
+            if (Keyboard.GetState().IsKeyDown(Keys.I)) body.findPart("Spear").debugAngle += 0.05f;
+            if (Keyboard.GetState().IsKeyDown(Keys.O)) body.findPart("Head").debugAngle += 0.05f;
+
+            //Body swapping stuff
             if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
                 if (!lastPress)
@@ -58,17 +66,16 @@ namespace KinectProject.Source
                     backgroundId = (backgroundId == background.Count - 1) ? 0 : backgroundId + 1;
                 }
             }
-            else
+            else { 
                 lastPress = false;
-
+                }
 
         }
 
         public void draw(Render render)
         {
-            render.drawImg(background[backgroundId], 800, 600);
-            body.draw(render, new Vector2(300,300), 1, data);
 
+            body.draw(render, new Vector2(300, 300), 0, data);
         }
 
     }

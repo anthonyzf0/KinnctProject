@@ -7,75 +7,75 @@ namespace KinectProject.Source.Graphics
 {
     class Render
     {
+        public enum TexturePoint
+        {
+            mid, left, right, top, bottom
+        }
+
         //Base texture
-        Texture2D rect;
         SpriteBatch spriteBatch;
         SpriteFont font;
+        Texture2D rect;
 
         //Render vectors
         private Vector2 horizontal = new Vector2(1, 0);
 
         public Render(SpriteBatch graphics, GraphicsDevice g, Microsoft.Xna.Framework.Content.ContentManager content)
         {
-            rect = new Texture2D(g, 1, 1);
-            rect.SetData(new Color[] { Color.White });
-
             spriteBatch = graphics;
             font = content.Load<SpriteFont>("font");
-
             SpriteLoader.content = content;
+
+            rect = new Texture2D(graphics.GraphicsDevice, 1, 1);
+            rect.SetData(new Color[1] {Color.White});
         }
         
         //Sets up render
         public void start()
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.BackToFront, null);
         }
         public void end()
         {
             spriteBatch.End();
         }
-        
+
+        //rotation type
+        private Vector2 getPos(TexturePoint t)
+        {
+            if (t == TexturePoint.mid) return new Vector2(0.5f,0.5f);
+            if (t == TexturePoint.left) return new Vector2(0f, 0.5f);
+            if (t == TexturePoint.right) return new Vector2(1f, 0.5f);
+            if (t == TexturePoint.top) return new Vector2(0.5f, 0f);
+            if (t == TexturePoint.bottom) return new Vector2(0.5f, 1f);
+            return Vector2.Zero;
+
+        }
+
         //render stuff
-        public void draw(int x, int y, int w, int h, Color c)
+        public void drawPart(Vector2 point, Vector2 size, Double angle, Texture2D t, double l, TexturePoint rotationType, Vector2 shift)
         {
-            spriteBatch.Draw(rect, new Rectangle(x, y, w, h), c);
+            //Gets where to rotate
+            Vector2 pos = getPos(rotationType);
+            Vector2 rotationPos = (new Vector2(t.Width, t.Height) * pos) + shift;
+            Rectangle rectangle = new Rectangle((int)point.X,(int)point.Y,(int)size.X, (int)size.Y);
+            
+            spriteBatch.Draw(t, rectangle,null, Color.White, (float)angle, rotationPos, SpriteEffects.None, (float)l);
         }
-
-        public void drawBox(Vector2 v, Color c)
-        {
-            draw((int)v.X - 3, (int)v.Y - 3, 6, 6,c);
-        }
-
         public void show(int x, int y, String text)
         {
             spriteBatch.DrawString(font, text, new Vector2(x, y), Color.White);
         }
+        public void drawBox(Vector2 v, Color c)
+        {
+            draw((int)v.X - 3, (int)v.Y - 3, 6, 6, c);
+            show((int)v.X, (int)v.Y, (int)v.X + " " + (int)v.Y);
+        }
+        public void draw(int x, int y, int w, int h, Color c)
+        {
+            spriteBatch.Draw(rect, new Rectangle(x,y,w,h),null, c, 0, Vector2.Zero, SpriteEffects.None, 0f);
+        }
         
-        public void drawPartDistance(float angle, float distance, Texture2D texture, Vector2 pos)
-        {
-            if (texture == null) return;
-
-            double yVal = texture.Height/3;
-            spriteBatch.Draw(texture, new Rectangle((int)pos.X, (int)(pos.Y), (int)distance, (int)yVal), null, Color.White, (float)angle, new Vector2(0,texture.Height/2), SpriteEffects.None, 0);
-        }
-
-        public void drawPartCenter(Texture2D texture, Vector2 pos, float rotation, int width, int height)
-        {
-            if (texture == null) return;
-
-            spriteBatch.Draw(texture, new Rectangle((int)(pos.X), (int)(pos.Y), width * 2, height * 2),
-                null, Color.White, (float)rotation, new Vector2(texture.Width/2, texture.Height/2), SpriteEffects.None, 0
-                
-            );
-
-        }
-
-        public void drawImg(Texture2D text, int width, int height)
-        {
-            spriteBatch.Draw(text, new Rectangle(0, 0, width, height), Color.White);
-        }
-
     }
 
 }

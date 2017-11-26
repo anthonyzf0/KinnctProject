@@ -154,3 +154,12 @@ C:\Users\eahscs\Desktop\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.cspr
 C:\Users\eahscs\Desktop\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.csproj.CoreCompileInputs.cache
 C:\Users\eahscs\Desktop\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.exe
 C:\Users\eahscs\Desktop\KinnctProject\PondGame2\obj\x86\Debug\KinectProject.pdb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\Knight\Body.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\Knight\Head.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\Knight\LeftArm.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\Knight\LeftLeg.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\Knight\RightArm.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\Knight\RightLeg.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\Knight\Shield.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\Knight\Spear.xnb
+C:\Users\antho\OneDrive\Documents\GitHub\KinnctProject\PondGame2\bin\Windows\x86\Debug\Content\Bodies\Knight\test.xnb

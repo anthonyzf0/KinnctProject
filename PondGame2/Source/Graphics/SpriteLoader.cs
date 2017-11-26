@@ -22,7 +22,8 @@ namespace KinectProject.Source.Graphics
             foreach (String file in files)
             {
                 String name = file.Substring(9, file.Length - 13).Replace("\\","//");
-                textures.Add(name.Substring(14), content.Load<Texture2D>(name));
+                String key = name.Substring(name.LastIndexOf("//")+2);
+                textures.Add(key, content.Load<Texture2D>(name));
             }
             
             return textures;

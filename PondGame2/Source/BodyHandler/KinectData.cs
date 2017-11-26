@@ -19,7 +19,7 @@ namespace KinectProject.Source.BodyHandler
             {BodyAngle.body, 0 },
             {BodyAngle.leftLowwerArm, 0 },
             {BodyAngle.rightLowwerArm, 0 },
-            {BodyAngle.leftUpperArm, 0 },
+            {BodyAngle.leftUpperArm, (float)(Math.PI) - 0.4f },
             {BodyAngle.rightUpperArm, 0 },
             {BodyAngle.leftLowwerLeg, 0 },
             {BodyAngle.leftUpperLeg, 0 },
@@ -143,7 +143,8 @@ namespace KinectProject.Source.BodyHandler
         {
             if (angles.ContainsKey(angle))
                 return angles[angle] + baseAngles[angle];
-            return 0;
+
+            return baseAngles[angle];
         }
         
     }

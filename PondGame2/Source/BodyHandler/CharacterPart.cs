@@ -1,6 +1,7 @@
 ﻿using KinectProject.Source.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,20 +20,15 @@ namespace KinectProject.Source.BodyHandler
             body,head
 
         }
-
+        
         //Used for debug
         public float debugAngle = 0;
 
         //Rotation offset
-        private float x = 0, y = 0;
-        private Vector2 offset;
-        private float offsetAngle = 0;
-
-        private int length;
-
-        private int sizeX, sizeY;
-        private bool mid = false;
-        private float distance = 0;
+        private Vector2 size, axis, center;
+        private Render.TexturePoint point;
+        private double axisAngle, axisDistance, layer;
+        private Vector2 shift = Vector2.Zero;
         
         //What effects its angle
         private BodyAngle deltaAngle;
@@ -53,36 +49,29 @@ namespace KinectProject.Source.BodyHandler
         }
 
         //Sets a part rotating about its center
-        public CharacterPart(String name, BodyAngle delta, Texture2D img, int width, int height)
+        public CharacterPart(String name, BodyAngle delta, Texture2D img, double depth, Render.TexturePoint point, Vector2 deltaAxis, Vector2 dimentions)
         {
+            //Info on part
             partName = name;
             deltaAngle = delta;
-
             texture = img;
+            layer = depth;
 
-            sizeX = width;
-            sizeY = height;
-            
-            mid = true;
+            //Position 
+            size = dimentions;
+
+            //Axis location info
+            axis = deltaAxis;
+            axisAngle = getAngle(axis);
+            axisDistance = axis.Length();
+            this.point = point;
+
 
         }
 
-        //Sets a part rotating about a point x and y from last part center
-        public CharacterPart(String name, BodyAngle delta, float x, float y, Texture2D img, int length)
+        public void shiftImage(int x, int y)
         {
-            partName = name;
-            deltaAngle = delta;
-
-            texture = img;
-
-            //Position data
-            this.x = x;
-            this.y = y;
-            offset = new Vector2(x, y);
-            distance = offset.Length();
-            offsetAngle = getAngle(offset);
-
-            this.length = length;
+            shift = new Vector2(x, y);
         }
         
         public void addPart(string basePart, CharacterPart newPart)
@@ -110,40 +99,34 @@ namespace KinectProject.Source.BodyHandler
         }
         public float getAngle(Vector2 a)
         {
+            if (a == Vector2.Zero) return 0;
             double angle = Math.Atan((double)(a.Y/a.X));
+            if (angle == double.NaN) angle = 0;
             if (a.X<0) angle += Math.PI;
 
-            return (float)angle;
+            return -(float)angle;
+        }
+        public Vector2 project( double distance, double angle, Vector2 initial)
+        {
+            return new Vector2((float)(Math.Cos(angle) * distance), (float)(Math.Sin(angle) * distance)) + initial;
         }
 
         public void draw(Render render, Vector2 pos, float angle, KinectData data)
         {
-            render.drawBox(pos, Color.Orange);
-            //Gets angles and pos
-            angle += offsetAngle;
-            float nextAngle = angle + data.getAngle(deltaAngle) + debugAngle; 
+            //New angle
+            Vector2 axisPos = project(axisDistance, angle + axisAngle, pos);
+            angle += debugAngle + data.getAngle(deltaAngle);
 
-            //Rotates and draws
-            if (mid)
-                render.drawPartCenter(texture, pos, nextAngle, sizeX, sizeY);
-            else
-            {
-                pos += new Vector2((float)(distance * Math.Cos(angle)),(float)(distance * Math.Sin(angle)));
-                render.drawPartDistance(nextAngle, length, texture, pos);
-
-                pos += new Vector2((float)(length * Math.Cos(nextAngle)), (float)(length * Math.Sin(nextAngle)));
-            }
-
-            render.drawBox(pos, Color.Purple);
+            if (texture != null)
+                render.drawPart(axisPos, size, angle, texture, layer, point, shift);
             
-
-            //Next points
+            //Next Part
             foreach (CharacterPart part in attatchedParts)
             {
-                part.draw(render, pos, nextAngle, data);
+                part.draw(render, axisPos, angle, data);
             }
             
         }
-        
+
     }
 }
