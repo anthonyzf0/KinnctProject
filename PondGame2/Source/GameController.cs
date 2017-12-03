@@ -1,5 +1,4 @@
-﻿using Encog.Neural.Networks;
-using KinectProject.Source.BodyHandler;
+﻿using KinectProject.Source.BodyHandler;
 using KinectProject.Source.Graphics;
 using KinectProject.Source.Kinect;
 using Microsoft.Xna.Framework;
@@ -11,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static KinectProject.Source.BodyHandler.CharacterPart;
 
 namespace KinectProject.Source
 {
@@ -20,7 +20,7 @@ namespace KinectProject.Source
         private KinectData data;
         
         //Loads a body
-        private CharacterPart body = BodyLoader.loadBody("Knight");
+        private CharacterPart body = BodyLoader.loadBody("Fighter");
 
         //Backgrounds and other bodies
         private int backgroundId, bodyId;
@@ -28,6 +28,10 @@ namespace KinectProject.Source
         private List<Texture2D> background = SpriteLoader.loadBackgrounds();
         private List<String> bodyNames = SpriteLoader.characterNames();
 
+        //Saves
+        private List<Save> saves = new List<Save>();
+        public bool saving = false;
+        
         public GameController()
         {
             //kinect = new KinectHandler();
@@ -42,20 +46,15 @@ namespace KinectProject.Source
 
             //Zeros all data so that your position is now the base position
             if (Keyboard.GetState().IsKeyDown(Keys.Q)) data.zero();
-
-            if (Keyboard.GetState().IsKeyDown(Keys.R)) body.findPart("body").debugAngle += 0.05f;
-            if (Keyboard.GetState().IsKeyDown(Keys.T)) body.findPart("RightArm").debugAngle += 0.05f;
-            if (Keyboard.GetState().IsKeyDown(Keys.Y)) body.findPart("Shield").debugAngle += 0.05f;
-            if (Keyboard.GetState().IsKeyDown(Keys.U)) body.findPart("LeftArm").debugAngle += 0.05f;
-            if (Keyboard.GetState().IsKeyDown(Keys.I)) body.findPart("Spear").debugAngle += 0.05f;
-            if (Keyboard.GetState().IsKeyDown(Keys.O)) body.findPart("Head").debugAngle += 0.05f;
-
+            
             //Body swapping stuff
             if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
                 if (!lastPress)
                 {
-                    bodyId = (bodyId == bodyNames.Count - 1) ? 0 : bodyId + 1;
+                    lastPress = true;
+                    bodyId++;
+                    if (bodyId >= bodyNames.Count) bodyId = 0;
                     body = BodyLoader.loadBody(bodyNames[bodyId]);
                 }
             }
@@ -66,16 +65,38 @@ namespace KinectProject.Source
                     backgroundId = (backgroundId == background.Count - 1) ? 0 : backgroundId + 1;
                 }
             }
-            else { 
-                lastPress = false;
-                }
+            //Start or stop save
+            else if (Keyboard.GetState().IsKeyDown(Keys.Q))
+            {
+                saving = !saving;
 
+                if (saving)
+                {
+                    saves.Add(new Save(bodyNames[bodyId]));
+                }
+            }
+            else
+            {
+                lastPress = false;
+            }
+
+            //Saving
+            if (saving)
+            {
+                saves[saves.Count - 1].addFrame(data.angles);
+            }
+            
         }
 
         public void draw(Render render)
         {
 
-            body.draw(render, new Vector2(300, 300), 0, data);
+            render.background(background[backgroundId]);
+
+            for (int i = 0; i < saves.Count; i++)
+                saves[i].draw(i, render);
+
+            body.draw(render, new Vector2(300, 300), 0, data.angles);
         }
 
     }

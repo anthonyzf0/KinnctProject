@@ -1,0 +1,60 @@
+﻿1>------ Rebuild All started: Project: KinectProject, Configuration: Debug x86 ------
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Font.spritefont
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Backgrounds/castle.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Backgrounds/green.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Backgrounds/haunt.jpg
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Backgrounds/woah.jpg
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Elf1/1_boll.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Elf1/2_,boll.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Elf1/3_boll.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Elf1/body.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Elf1/fingers.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Elf1/head.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Elf1/leftarm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Elf1/leftleg.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Elf1/rightArm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Elf1/rightleg.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Elf1/wep.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Fighter/body.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Fighter/head.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Fighter/leftarm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Fighter/leftLeg.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Fighter/rightarm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Fighter/rightleg.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Fighter/wep.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight1/body.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight1/head.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight1/leftArm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight1/leftLeg.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight1/rightArm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight1/rightLeg.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight1/shield.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight1/wep.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight2/body.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight2/head.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight2/leftarm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight2/leftleg.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight2/rightarm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight2/rightleg.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight2/shield.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight2/wep.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight3/body.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight3/head.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight3/leftarm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight3/leftleg.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight3/righarm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight3/rightleg.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight3/shield.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight3/wep.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Troll1/body.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Troll1/head.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Troll1/leftArm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Troll1/leftLeg.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Troll1/rightArm.png
+1>  Skipping C:/Users/antho/Desktop/Kinect/KinnctProject/PondGame2/Content/Bodies/Troll1/rightLeg.png
+1>C:\Users\antho\Desktop\Kinect\KinnctProject\PondGame2\Source\Kinect\KinectHandler.cs(88,50,88,65): warning CS0067: The event 'KinectHandler.PropertyChanged' is never used
+1>C:\Users\antho\Desktop\Kinect\KinnctProject\PondGame2\Source\Kinect\KinectHandler.cs(36,23,36,27): warning CS0169: The field 'KinectHandler.hand' is never used
+1>C:\Users\antho\Desktop\Kinect\KinnctProject\PondGame2\Source\GameController.cs(18,31,18,37): warning CS0169: The field 'GameController.kinect' is never used
+1>C:\Users\antho\Desktop\Kinect\KinnctProject\PondGame2\Source\BodyHandler\CharacterPart.cs(28,37,28,43): warning CS0169: The field 'CharacterPart.center' is never used
+1>  KinectProject -> C:\Users\antho\Desktop\Kinect\KinnctProject\PondGame2\bin\Windows\x86\Debug\KinectProject.exe
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========

@@ -17,7 +17,8 @@ namespace KinectProject.Source.BodyHandler
             zero,
             leftUpperArm, leftLowwerArm, rightUpperArm, rightLowwerArm,
             leftUpperLeg, leftLowwerLeg, rightUpperLeg, rightLowwerLeg,
-            body,head
+            body,head,
+            xPos,yPos
 
         }
         
@@ -111,15 +112,15 @@ namespace KinectProject.Source.BodyHandler
             return new Vector2((float)(Math.Cos(angle) * distance), (float)(Math.Sin(angle) * distance)) + initial;
         }
 
-        public void draw(Render render, Vector2 pos, float angle, KinectData data)
+        public void draw(Render render, Vector2 pos, float angle, Dictionary<BodyAngle, float> data)
         {
             //New angle
             Vector2 axisPos = project(axisDistance, angle + axisAngle, pos);
-            angle += debugAngle + data.getAngle(deltaAngle);
+            angle += debugAngle + data[deltaAngle] + KinectData.baseAngles[deltaAngle]);
 
             if (texture != null)
                 render.drawPart(axisPos, size, angle, texture, layer, point, shift);
-            
+
             //Next Part
             foreach (CharacterPart part in attatchedParts)
             {

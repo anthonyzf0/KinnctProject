@@ -23,7 +23,7 @@ namespace KinectProject.Source.Graphics
             {
                 String name = file.Substring(9, file.Length - 13).Replace("\\","//");
                 String key = name.Substring(name.LastIndexOf("//")+2);
-                textures.Add(key, content.Load<Texture2D>(name));
+                textures.Add(key.ToLower(), content.Load<Texture2D>(name));
             }
             
             return textures;

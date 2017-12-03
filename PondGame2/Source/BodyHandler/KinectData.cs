@@ -11,16 +11,16 @@ namespace KinectProject.Source.BodyHandler
     class KinectData
     {
         public Dictionary<BodyAngle, float> angles;
-
-        private Dictionary<BodyAngle, float> baseAngles = new Dictionary<BodyAngle, float>() {
+        
+        public static  Dictionary<BodyAngle, float> baseAngles = new Dictionary<BodyAngle, float>() {
 
             {BodyAngle.zero, 0 },
             {BodyAngle.head, 0 },
             {BodyAngle.body, 0 },
             {BodyAngle.leftLowwerArm, 0 },
             {BodyAngle.rightLowwerArm, 0 },
-            {BodyAngle.leftUpperArm, (float)(Math.PI) - 0.4f },
-            {BodyAngle.rightUpperArm, 0 },
+            {BodyAngle.leftUpperArm,  0},
+            {BodyAngle.rightUpperArm, (float)(Math.PI) },
             {BodyAngle.leftLowwerLeg, 0 },
             {BodyAngle.leftUpperLeg, 0 },
             {BodyAngle.rightLowwerLeg, 0 },
@@ -117,6 +117,8 @@ namespace KinectProject.Source.BodyHandler
 
             );
 
+            angles.Add(BodyAngle.xPos, kinect.jointPoints[Microsoft.Kinect.JointType.SpineBase].X);
+            angles.Add(BodyAngle.xPos, kinect.jointPoints[Microsoft.Kinect.JointType.SpineBase].Y);
 
         }
 
