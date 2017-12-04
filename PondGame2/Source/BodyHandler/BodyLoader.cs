@@ -37,6 +37,7 @@ namespace KinectProject.Source.BodyHandler
                 body.addPart("LeftArm", new CharacterPart("Spear", CharacterPart.BodyAngle.leftLowwerArm, textures["wep"],
                     0.1f, Graphics.Render.TexturePoint.mid, new Vector2(105, 9), new Vector2(60, 470)));
                 body.findPart("Spear").shiftImage(-10, 255);
+                body.findPart("Spear").debugAngle += (float)Math.PI/2f;
 
                 body.addPart("body", new CharacterPart("Head", CharacterPart.BodyAngle.head, textures["head"],
                     0.59f, Graphics.Render.TexturePoint.bottom, new Vector2(30, 80), new Vector2(160, 160)));
@@ -130,8 +131,8 @@ namespace KinectProject.Source.BodyHandler
                 body.addPart("LeftArm", new CharacterPart("Sword", CharacterPart.BodyAngle.leftLowwerArm, textures["wep"],
                     0.1f, Graphics.Render.TexturePoint.bottom, new Vector2(85, 30), new Vector2(100, 250)));
                 body.findPart("Sword").shiftImage(-105, -30);
-                body.findPart("Sword").debugAngle -= (float)(5*Math.PI/2.0);
-
+                body.findPart("Sword").debugAngle += (float)Math.PI / 2f;
+                
                 body.addPart("body", new CharacterPart("Head", CharacterPart.BodyAngle.head, textures["head"],
                     0.59f, Graphics.Render.TexturePoint.bottom, new Vector2(30, 60), new Vector2(140, 140)));
                 body.findPart("Head").shiftImage(30, -60);
@@ -160,7 +161,7 @@ namespace KinectProject.Source.BodyHandler
                 body.addPart("LeftArm", new CharacterPart("Sword", CharacterPart.BodyAngle.leftLowwerArm, textures["wep"],
                     0.1f, Graphics.Render.TexturePoint.bottom, new Vector2(170, 15), new Vector2(200, 200)));
                 body.findPart("Sword").shiftImage(-200, -110);
-                body.findPart("Sword").debugAngle -= (float)(5 * Math.PI / 2.0);
+                body.findPart("Sword").debugAngle -= (float)Math.PI / 2f;
 
                 body.addPart("body", new CharacterPart("Head", CharacterPart.BodyAngle.head, textures["head"],
                     0.59f, Graphics.Render.TexturePoint.bottom, new Vector2(30, 60), new Vector2(140, 140)));

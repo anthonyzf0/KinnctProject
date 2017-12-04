@@ -116,7 +116,7 @@ namespace KinectProject.Source.BodyHandler
         {
             //New angle
             Vector2 axisPos = project(axisDistance, angle + axisAngle, pos);
-            angle += debugAngle + data[deltaAngle] + KinectData.baseAngles[deltaAngle]);
+            angle += debugAngle + data[deltaAngle] + KinectData.baseAngles[deltaAngle];
 
             if (texture != null)
                 render.drawPart(axisPos, size, angle, texture, layer, point, shift);

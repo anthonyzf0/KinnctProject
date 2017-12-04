@@ -59,9 +59,7 @@ namespace KinectProject.Source.Graphics
             Vector2 pos = getPos(rotationType);
             Vector2 rotationPos = (new Vector2(t.Width, t.Height) * pos) + shift;
             Rectangle rectangle = new Rectangle((int)point.X,(int)point.Y,(int)size.X, (int)size.Y);
-
-            drawBox(point, Color.Wheat);
-
+            
             spriteBatch.Draw(t, rectangle,null, Color.White, (float)angle, rotationPos, SpriteEffects.None, (float)l);
         }
         public void show(int x, int y, String text)

@@ -20,7 +20,7 @@ namespace KinectProject.Source
         private KinectData data;
         
         //Loads a body
-        private CharacterPart body = BodyLoader.loadBody("Fighter");
+        private CharacterPart body = BodyLoader.loadBody("Elf1");
 
         //Backgrounds and other bodies
         private int backgroundId, bodyId;
@@ -34,7 +34,7 @@ namespace KinectProject.Source
         
         public GameController()
         {
-            //kinect = new KinectHandler();
+            kinect = new KinectHandler();
             data = new KinectData();
             
         }
@@ -42,10 +42,10 @@ namespace KinectProject.Source
         public void update()
         {
             //Updates angle data with the kinect object
-            //data.readData(kinect);
+            data.readData(kinect);
 
             //Zeros all data so that your position is now the base position
-            if (Keyboard.GetState().IsKeyDown(Keys.Q)) data.zero();
+            if (Keyboard.GetState().IsKeyDown(Keys.Z)) data.zero();
             
             //Body swapping stuff
             if (Keyboard.GetState().IsKeyDown(Keys.W))
@@ -68,11 +68,16 @@ namespace KinectProject.Source
             //Start or stop save
             else if (Keyboard.GetState().IsKeyDown(Keys.Q))
             {
-                saving = !saving;
-
-                if (saving)
+                if (!lastPress)
                 {
-                    saves.Add(new Save(bodyNames[bodyId]));
+                    lastPress = true;
+                    saving = !saving;
+
+                    if (saving)
+                        saves.Add(new Save(bodyNames[bodyId]));
+
+                    if (!saving)
+                        saves[0].select();
                 }
             }
             else
@@ -90,13 +95,14 @@ namespace KinectProject.Source
 
         public void draw(Render render)
         {
+            if (data.angles.Keys.Count == 0) return;
 
             render.background(background[backgroundId]);
-
+            
             for (int i = 0; i < saves.Count; i++)
                 saves[i].draw(i, render);
 
-            body.draw(render, new Vector2(300, 300), 0, data.angles);
+            body.draw(render, new Vector2(600-data.angles[BodyAngle.xPos], data.angles[BodyAngle.yPos]), 0, data.angles);
         }
 
     }
