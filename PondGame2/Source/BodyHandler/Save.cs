@@ -59,8 +59,8 @@ namespace KinectProject.Source.BodyHandler
                     frameNumber = 0;
 
                 if (frames[frameNumber].Count != 0)
-                    body.draw(render, new Vector2(  frames[frameNumber][BodyAngle.xPos], 
-                                                frames[frameNumber][BodyAngle.yPos]), 
+                    body.draw(render, new Vector2(1400 - (frames[frameNumber][BodyAngle.xPos])*(2.7f), 
+                                                150+frames[frameNumber][BodyAngle.yPos]), 
                                                 0, frames[frameNumber]);
 
             }

@@ -18,6 +18,7 @@ namespace KinectProject.Source
     {
         //private KinectHandler kinect;
         private KinectData data;
+        private KinectHandler kinect;
         
         //Loads a body
         private CharacterPart body = BodyLoader.loadBody("Elf1");
@@ -30,13 +31,14 @@ namespace KinectProject.Source
         //Saves
         private List<Save> saves = new List<Save>();
         public bool saving = false;
+        public bool guy = true;
 
         //Keys
         private KeyHandler key = new KeyHandler();
         
         public GameController()
         {
-            //kinect = new KinectHandler();
+            kinect = new KinectHandler();
             data = new KinectData();
             
         }
@@ -44,7 +46,7 @@ namespace KinectProject.Source
         public void update()
         {
             //Updates angle data with the kinect object
-            //data.readData(kinect);
+            data.readData(kinect);
 
             //Get key Presses
             key.update();
@@ -83,6 +85,8 @@ namespace KinectProject.Source
                         i--;
                     }
             }
+            if (key.getKey(Keys.P))
+                guy = !guy;
 
             //Select pressed numbers
             int num = key.getNum();
@@ -100,12 +104,22 @@ namespace KinectProject.Source
             //if (data.angles.Keys.Count == 0) return;
 
             render.background(background[backgroundId]);
-            
+
             for (int i = 0; i < saves.Count; i++)
                 saves[i].draw(i, render);
 
-            //body.draw(render, new Vector2(600-data.angles[BodyAngle.xPos], data.angles[BodyAngle.yPos]), 0, data.angles);
-            body.draw(render, new Vector2(300,300), 0, data.angles);
+            if (guy)
+            {
+                if (data.angles.Count != 0)
+                    body.draw(render, new Vector2(1400 - data.angles[BodyAngle.xPos]*(2.7f), 150 + data.angles[BodyAngle.yPos]), 0, data.angles);
+                else
+                    body.draw(render, new Vector2(300, 300), 0, data.angles);
+                
+            }
+            else
+            {
+                render.show(50,50,"Player hidden");
+            }
         }
 
     }

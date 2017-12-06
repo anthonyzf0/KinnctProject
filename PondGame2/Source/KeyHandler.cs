@@ -9,7 +9,7 @@ namespace KinectProject.Source
 {
     class KeyHandler
     {
-        private List<Keys> keys = new List<Keys>() { Keys.Q, Keys.W, Keys.E, Keys.Z, Keys.Delete};
+        private List<Keys> keys = new List<Keys>() { Keys.Q, Keys.W, Keys.E, Keys.Z, Keys.Delete, Keys.P};
         private List<Keys> nums = new List<Keys>() { Keys.D1, Keys.D2, Keys.D3, Keys.D4, Keys.D5 };
 
         private Dictionary<Keys, bool> values = new Dictionary<Keys, bool>();

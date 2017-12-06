@@ -78,7 +78,7 @@ namespace KinectProject.Source.Graphics
 
         public void background (Texture2D back)
         {
-            spriteBatch.Draw(back, new Rectangle(0, 0, 600, 600),null,Color.White,0,Vector2.Zero,SpriteEffects.None,0.999f);
+            spriteBatch.Draw(back, new Rectangle(0, 0, 1200, 700),null,Color.White,0,Vector2.Zero,SpriteEffects.None,0.999f);
         }
         
     }
