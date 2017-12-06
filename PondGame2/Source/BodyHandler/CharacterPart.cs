@@ -36,7 +36,7 @@ namespace KinectProject.Source.BodyHandler
 
         //Name & texture
         public String partName;
-        private Texture2D texture;
+        public Texture2D texture;
 
         public List<CharacterPart> attatchedParts = new List<CharacterPart>();
 
@@ -116,7 +116,10 @@ namespace KinectProject.Source.BodyHandler
         {
             //New angle
             Vector2 axisPos = project(axisDistance, angle + axisAngle, pos);
-            angle += debugAngle + data[deltaAngle] + KinectData.baseAngles[deltaAngle];
+            if (data.Count == 0)
+                angle += debugAngle;
+            else
+                angle += debugAngle + data[deltaAngle] + KinectData.baseAngles[deltaAngle];
 
             if (texture != null)
                 render.drawPart(axisPos, size, angle, texture, layer, point, shift);

@@ -73,7 +73,7 @@ namespace KinectProject.Source.Graphics
         }
         public void draw(int x, int y, int w, int h, Color c)
         {
-            spriteBatch.Draw(rect, new Rectangle(x,y,w,h),null, c, 0, Vector2.Zero, SpriteEffects.None, 0f);
+            spriteBatch.Draw(rect, new Rectangle(x,y,w,h),null, c, 0, Vector2.Zero, SpriteEffects.None, 0.1f);
         }
 
         public void background (Texture2D back)

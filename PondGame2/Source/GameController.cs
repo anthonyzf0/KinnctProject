@@ -16,7 +16,7 @@ namespace KinectProject.Source
 {
     class GameController
     {
-        private KinectHandler kinect;
+        //private KinectHandler kinect;
         private KinectData data;
         
         //Loads a body
@@ -24,17 +24,19 @@ namespace KinectProject.Source
 
         //Backgrounds and other bodies
         private int backgroundId, bodyId;
-        private bool lastPress = false;
         private List<Texture2D> background = SpriteLoader.loadBackgrounds();
         private List<String> bodyNames = SpriteLoader.characterNames();
-
+        
         //Saves
         private List<Save> saves = new List<Save>();
         public bool saving = false;
+
+        //Keys
+        private KeyHandler key = new KeyHandler();
         
         public GameController()
         {
-            kinect = new KinectHandler();
+            //kinect = new KinectHandler();
             data = new KinectData();
             
         }
@@ -42,67 +44,68 @@ namespace KinectProject.Source
         public void update()
         {
             //Updates angle data with the kinect object
-            data.readData(kinect);
+            //data.readData(kinect);
+
+            //Get key Presses
+            key.update();
 
             //Zeros all data so that your position is now the base position
-            if (Keyboard.GetState().IsKeyDown(Keys.Z)) data.zero();
-            
+            if (key.getKey(Keys.Z)) data.zero();
+
             //Body swapping stuff
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            if (key.getKey(Keys.W))
             {
-                if (!lastPress)
-                {
-                    lastPress = true;
-                    bodyId++;
-                    if (bodyId >= bodyNames.Count) bodyId = 0;
-                    body = BodyLoader.loadBody(bodyNames[bodyId]);
-                }
+                bodyId++;
+                if (bodyId >= bodyNames.Count) bodyId = 0;
+                body = BodyLoader.loadBody(bodyNames[bodyId]);
             }
-            else if (Keyboard.GetState().IsKeyDown(Keys.E)) {
-                if (!lastPress)
-                {
-                    lastPress = true;
-                    backgroundId = (backgroundId == background.Count - 1) ? 0 : backgroundId + 1;
-                }
-            }
-            //Start or stop save
-            else if (Keyboard.GetState().IsKeyDown(Keys.Q))
+            if (key.getKey(Keys.E))
             {
-                if (!lastPress)
-                {
-                    lastPress = true;
-                    saving = !saving;
+                backgroundId = (backgroundId == background.Count - 1) ? 0 : backgroundId + 1;
+            }
+            if (key.getKey(Keys.Q))
+            {
+                saving = !saving;
+                if (saving) 
+                    saves.Add(new Save(bodyNames[bodyId]));
 
-                    if (saving)
-                        saves.Add(new Save(bodyNames[bodyId]));
+                if (!saving)
+                    saves[saves.Count-1].select();
+                
+            }
 
-                    if (!saving)
-                        saves[0].select();
-                }
-            }
-            else
+            if (key.getKey(Keys.Delete))
             {
-                lastPress = false;
+                for (int i = 0; i < saves.Count; i++)
+                    if (saves[i].selected)
+                    {
+                        saves.RemoveAt(i);
+                        i--;
+                    }
             }
+
+            //Select pressed numbers
+            int num = key.getNum();
+            if (num != -1 && saves.Count > num)
+                saves[num].select();
 
             //Saving
             if (saving)
-            {
                 saves[saves.Count - 1].addFrame(data.angles);
-            }
             
         }
 
         public void draw(Render render)
         {
-            if (data.angles.Keys.Count == 0) return;
+            //if (data.angles.Keys.Count == 0) return;
 
             render.background(background[backgroundId]);
             
             for (int i = 0; i < saves.Count; i++)
                 saves[i].draw(i, render);
 
-            body.draw(render, new Vector2(600-data.angles[BodyAngle.xPos], data.angles[BodyAngle.yPos]), 0, data.angles);
+            //body.draw(render, new Vector2(600-data.angles[BodyAngle.xPos], data.angles[BodyAngle.yPos]), 0, data.angles);
+            body.draw(render, new Vector2(300,300), 0, data.angles);
         }
 
     }

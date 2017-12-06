@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/eahscs/Desktop/KinnctProject/PondGame2/Content/Bodies/Knight2/leftarm.png</SourceFile>
-  <SourceTime>2017-12-04T09:16:07.6710149-05:00</SourceTime>
-  <DestFile>C:/Users/eahscs/Desktop/KinnctProject/PondGame2/Content/bin/Windows/Bodies/Knight2/leftarm.xnb</DestFile>
-  <DestTime>2017-12-04T09:17:14.5528798-05:00</DestTime>
+  <SourceFile>C:/Users/antho/Desktop/Coding/Monogame/Kinect/KinnctProject/PondGame2/Content/Bodies/Knight2/leftarm.png</SourceFile>
+  <SourceTime>2017-12-05T17:57:44.6730521-05:00</SourceTime>
+  <DestFile>C:/Users/antho/Desktop/Coding/Monogame/Kinect/KinnctProject/PondGame2/Content/bin/Windows/Bodies/Knight2/leftarm.xnb</DestFile>
+  <DestTime>2017-12-05T18:00:27.081205-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

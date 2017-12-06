@@ -52,6 +52,7 @@
     <Compile Include="Source\GameController.cs" />
     <Compile Include="Source\Graphics\Render.cs" />
     <Compile Include="Source\Graphics\SpriteLoader.cs" />
+    <Compile Include="Source\KeyHandler.cs" />
     <Compile Include="Source\Kinect\KinectHandler.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/eahscs/Desktop/KinnctProject/PondGame2/Content/Backgrounds/cave-24.jpg</SourceFile>
-  <SourceTime>2017-12-04T09:16:07.6149785-05:00</SourceTime>
-  <DestFile>C:/Users/eahscs/Desktop/KinnctProject/PondGame2/Content/bin/Windows/Backgrounds/cave-24.xnb</DestFile>
-  <DestTime>2017-12-04T09:17:16.0713052-05:00</DestTime>
+  <SourceFile>C:/Users/antho/Desktop/Coding/Monogame/Kinect/KinnctProject/PondGame2/Content/Backgrounds/cave-24.jpg</SourceFile>
+  <SourceTime>2017-12-05T17:57:44.5176854-05:00</SourceTime>
+  <DestFile>C:/Users/antho/Desktop/Coding/Monogame/Kinect/KinnctProject/PondGame2/Content/bin/Windows/Backgrounds/cave-24.xnb</DestFile>
+  <DestTime>2017-12-05T18:00:28.6593577-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
